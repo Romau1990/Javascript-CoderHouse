@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrega 1</title>
+    <title>Entrega 2</title>
     <meta name="description" content="primera entrega de Coder centrada en una web educativa.">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
@@ -40,39 +40,38 @@
             <fieldset>
                 <div>
                     <label for="">Elegir curso</label>
-                    <select name="" id="">
-                        <option value="">Todas</option>
-                        <option value="">Programación</option>
-                        <option value="">Soporte IT</option>
-                        <option value="">Bases de datos</option>
-                        <option value="">Fullstack</option>
-                        <option value="">Ciencias de la computación</option>
-                        <option value="">Inteligencia Artificial</option>
-                        <option value="">Lógica de programación</option>
-                        <option value="">Diseño UX/UI</option>
+                    <select name="" class="curso">
+                        <option value="Todas">Todas</option>
+                        <option value="Programación">Programación</option>
+                        <option value="Soporte">Soporte IT</option>
+                        <option value="Bases de datos">Bases de datos</option>
+                        <option value="Fullstack">Fullstack</option>
+                        <option value="Ciencias de la computación">Ciencias de la computación</option>
+                        <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+                        <option value="Lógica de programación">Lógica de programación</option>
+                        <option value="Diseño UX/UI">Diseño UX/UI</option>
                     </select>
                 </div>
 
                 <div>
                     <label for="">Elegir día</label>
-                    <select class="dia" name="" id="">
-                        <option value="">Lunes</option>
-                        <option value="">Martes</option>
-                        <option value="">Miercoles</option>
-                        <option value="">Jueves</option>
-                        <option value="">Viernes</option>
+                    <select class="dia" name="">
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miercoles">Miercoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
                     </select>
                     <!--acá aparecerán los horarios disponibles en base al día de forma dinámica-->
                     <select name="" class="hora"></select>
                 </div>
             </fieldset>
 
-            <input class="register-btn" type="submit">
-
+            <input class="register-btn btn" type="submit" value="Enviar">
+            <button class="info-btn btn">ver informacion</button>
         </form>
-<!-- 
+        <!-- 
         <section class="hidden-box">
-            
         </section> -->
     </div>
 

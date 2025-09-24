@@ -40,7 +40,7 @@ h1,h2,h3,p,a,li{
 
 .app-form{
     background-color:rgba(255,255,255,.6);
-    height: 32rem;
+    height: 34rem;
     width: 35rem;
     border-radius: 1rem;
     padding: 2rem;
@@ -77,6 +77,25 @@ input, select{
     cursor: pointer;
 }
 
+.info-btn{
+    height: 1.8rem;
+    width: 10rem;
+    margin: auto;
+    background-color: #07075A;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.close-btn{
+    width: 10rem;
+    height: 1.8rem;
+    background-color:#07075A;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
 .personal-info{
     display: flex;
     justify-content: space-between;
@@ -91,8 +110,23 @@ input, select{
 
 
 .hidden-box{
-    background-color:rgba(255,255,255,.6);
     width: 25rem;
-    min-height: 20rem;
+    height: 34rem;
     border-radius: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    row-gap:2rem;
+    overflow:auto;
+    padding: 1rem;
 }
+
+.hidden-info{
+    background-color:rgba(255,255,255,.6);
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
+
+
