@@ -1,11 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Entrega 1</title>
+    <meta name="description" content="primera entrega de Coder centrada en una web educativa.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
+
 <body>
-    
+    <header>
+        <nav></nav>
+    </header>
+    <div class="page-wrapper">
+        <section class="bg-img"></section>
+        <form class="app-form">
+            <h1>registro de estudiante</h1>
+            <fieldset>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text">
+                </div>
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" type="text">
+                </div>
+                <div>
+                    <label for="edad">Edad</label>
+                    <input id="edad" type="number">
+                </div>
+                <div>
+                    <label for="ci">CI:</label>
+                    <input id="ci" type="text">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="">Elegir curso</label>
+                    <select name="" id="">
+                        <option value="">Todas</option>
+                        <option value="">Programación</option>
+                        <option value="">Soporte IT</option>
+                        <option value="">Bases de datos</option>
+                        <option value="">Fullstack</option>
+                        <option value="">Ciencias de la computación</option>
+                        <option value="">Inteligencia Artificial</option>
+                        <option value="">Lógica de programación</option>
+                        <option value="">Diseño UX/UI</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="">Elegir día</label>
+                    <select class="dia" name="" id="">
+                        <option value="">Lunes</option>
+                        <option value="">Martes</option>
+                        <option value="">Miercoles</option>
+                        <option value="">Jueves</option>
+                        <option value="">Viernes</option>
+                    </select>
+                    <!--acá aparecerán los horarios disponibles en base al día de forma dinámica-->
+                    <select name="" class="hora"></select>
+                </div>
+            </fieldset>
+
+            <input class="register-btn" type="submit">
+
+        </form>
+<!-- 
+        <section class="hidden-box">
+            
+        </section> -->
+    </div>
+
+    <footer class="footer">
+        <div class="personal-info">
+            <p>Rodrigo Alvarez</p>
+            <p>Montevideo Uruguay</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>
