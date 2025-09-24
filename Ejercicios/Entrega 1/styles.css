@@ -1,0 +1,73 @@
+/*General settings*/
+
+:root{
+    --main-color: rgb(7, 7, 90);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1,h2,h3,p,a,li{
+    font-family:sans-serif;
+}
+
+.page-wrapper{
+    margin: auto;
+    padding: 1rem;
+    max-width: 60rem;
+}
+
+
+.bg-img{
+    background-image:url("images/edu-bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed; 
+    /* background-attachment: fixed; */
+    inset: 0;
+    opacity: .8;
+    z-index: -1;
+}
+
+.info-section{
+    display: flex;  
+    align-items: center;
+    height: 90vh;
+}
+
+.info{
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex; 
+    flex-flow: column wrap;
+    gap: 1rem;
+    background-color: var(--main-color);
+    width: 30rem;
+    min-height: 15rem;
+    color: white;
+    box-shadow: 0 0 20px 3px rgba(0,0,0,.7);
+}
+
+.info__header-box{
+    margin-bottom: 1.5rem;
+}
+
+.info__text{
+    font-size: .9rem;
+}
+
+.personal-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--main-color);
+    color: white;
+    font-size: .8rem;
+    padding: .5rem;
+}
