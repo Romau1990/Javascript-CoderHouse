@@ -21,7 +21,51 @@ h1,h2,h3,p,a,li{
 button, input[type="submit"]:hover{
     background-color:#0909a9;
     transition: .5s ease-in-out;
+    cursor: pointer;
 }
+
+
+/*HEADER*/
+
+.header{
+    background-color: rgba(255,255,255,.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav{
+    width: 30rem;
+    height: 3rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.filter-term{
+    border: none;
+    height: 1.8rem;
+    border: 1px solid black;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+.filter-search{
+    height: auto;
+    width: 4rem;
+    height: 1.8rem;
+    background-color: transparent;
+    border: none;
+}
+
+.filter-search img{
+    width: 1rem;
+    height: 1rem;
+}
+
+/*PAGE WRAPPER*/
 
 .page-wrapper{
     margin: auto;

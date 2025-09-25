@@ -19,62 +19,6 @@ infoBox = document.createElement('div');
 infoBox.classList.add('hidden-box');
 pageWrapper.appendChild(infoBox);
 
-let searchContainer = document.createElement('div');
-searchContainer.style.display = 'flex'
-searchContainer.style.width = '100%';
-searchContainer.style.padding = '.2rem';
-searchContainer.style.border = '1px solid black';
-searchContainer.style.alignItems = 'center';
-searchContainer.style.position = 'sticky';
-searchContainer.style.top = '-4rem';
-
-let searchInput = document.createElement('input');
- 
-searchInput.style.border = 'none';
-searchInput.style.backgroundColor = 'rgba(255,255,255,.6)';
-
-let searchTerm = document.createElement('select');
-// Default
-let optionDefault = document.createElement('option');
-optionDefault.value = '---------';
-optionDefault.textContent = '----------';
-
-// Opción 1
-let option1 = document.createElement('option');
-option1.value = 'nombre';
-option1.textContent = 'Nombre';
-
-// Opción 2
-let option2 = document.createElement('option');
-option2.value = 'apellido';
-option2.textContent = 'Apellido';
-
-// Opción 3
-let option3 = document.createElement('option');
-option3.value = 'curso';
-option3.textContent = 'Curso';
-
-searchTerm.appendChild(optionDefault);
-searchTerm.appendChild(option1);
-searchTerm.appendChild(option2);
-searchTerm.appendChild(option3);
-searchTerm.style.backgroundCOlor = 'transparent';
-
-let searchButton = document.createElement('img');
-searchButton.setAttribute('src', 'images/icon.png');
-searchButton.style.width = '1.5rem';
-searchButton.style.height = '1.5rem'
-searchButton.style.cursor= "pointer";
-
-searchInput.setAttribute('placeholder', 'buscar estudiante');
-searchContainer.appendChild(searchInput);
-searchContainer.appendChild(searchTerm)
-searchContainer.appendChild(searchButton)
-infoBox.appendChild(searchContainer);
-
-
-
-
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
