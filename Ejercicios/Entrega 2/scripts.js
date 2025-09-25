@@ -12,7 +12,6 @@ let courseInput = document.querySelector('.curso')
 let dayInput = document.querySelector('.dia');
 let timeInput = document.querySelector('.hora');
 let message = document.querySelector('.hidden-message');
-
 //La idea de crear varios elementos html es meramente la de practicar.. Siempre es mejor delegar cada acción al lenguaje correspondiente.
 
 //Elementos HTML 
@@ -26,6 +25,8 @@ searchContainer.style.width = '100%';
 searchContainer.style.padding = '.2rem';
 searchContainer.style.border = '1px solid black';
 searchContainer.style.alignItems = 'center';
+searchContainer.style.position = 'sticky';
+searchContainer.style.top = '-4rem';
 
 let searchInput = document.createElement('input');
  
@@ -122,9 +123,10 @@ registerButton.addEventListener('click', () => {
 
 //frontend (NO TOCAR, ESTA BIEN)
 function displayStudent(parentName) {
-    let studentBox = document.createElement('div');
-    studentBox.classList.add('hidden-info');
+
     studentDB.forEach(el => {
+        let studentBox = document.createElement('div');
+        studentBox.classList.add('hidden-info');
         studentBox.innerHTML =
             `
             <p>nombre: ${el.nombre}</p>
@@ -135,8 +137,8 @@ function displayStudent(parentName) {
             <p>dia: ${el.dia}</p>
             <p>hora: ${el.hora}</p>
             `
+            parentName.appendChild(studentBox);
     })
-    parentName.appendChild(studentBox);
 }
 
 
