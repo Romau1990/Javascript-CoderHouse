@@ -15,6 +15,11 @@ h1,h2,h3,p,a,li{
     font-family:sans-serif;
 }
 
+button, input[type="submit"]:hover{
+    background-color:#0909a9;
+    transition: .5s ease-in-out;
+}
+
 .page-wrapper{
     margin: auto;
     padding-top: 6rem;
@@ -87,6 +92,7 @@ input, select{
     border: none;
     color: white;
     cursor: pointer;
+    transition: .5s ease-in-out;
 }
 
 .close-btn{

@@ -49,11 +49,11 @@ registerButton.addEventListener('click', () => {
     if (errorCatcher(newStudent) == false) {
         studentDB.push(newStudent)
         displayStudent(infoBox);
-        showMessage();
+        showMessage('estudiante ingresado correctamente', 'green');
         form.reset();
     }
     else{
-        throw new Error('faltan datulis')
+        showMessage('falta completar datos', 'red')
     }
 })
 
@@ -77,8 +77,9 @@ function displayStudent(parentName) {
 }
 
 
-function showMessage() {
-    message.innerHTML = 'estudiante agregado correctamente!';
+function showMessage(msg, color) {
+    message.innerHTML = msg;
+    message.style.color = color;
     message.style.opacity = 1;
     setTimeout(() => {
         message.style.opacity = 0;
@@ -90,10 +91,12 @@ function showMessage() {
 infoBtn.addEventListener('click', () => {
     if (infoBox.style.display == '') {
         infoBox.style.display = 'flex'
+        infoBtn.style.backgroundColor = 'purple'
         infoBtn.innerHTML = 'cerrar informacion';
     }
     else if (infoBox.style.display == 'flex') {
         infoBtn.innerHTML = 'ver informacion';
+        infoBtn.style.backgroundColor = '#07075A';
         infoBox.style.display = ''
     }
 })
