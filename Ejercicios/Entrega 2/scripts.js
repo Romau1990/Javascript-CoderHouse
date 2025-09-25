@@ -23,42 +23,38 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 })
 
-function errorCatcher(db) {
-    let err = false;
-    db.forEach(el => {
-        Object.values(el).some(item => {
-            if (item == '') {
-                err = true;
-            }
-        })
-    })
-    return err;
+function errorCatcher(student) {
+    let isError = Object.values(student).some(value => value == '');
+    return isError;
 }
+
+
 
 //backend -guardo los datos en la base de datos solamente. (NO TOCAR, LOS DATOS SE AGREGAN CORRECTAMENTE)
 let studentDB = []
 
 registerButton.addEventListener('click', () => {
 
-    if (errorCatcher(studentDB) == false) {
+    //objeto estudiante
+    let newStudent = {
+        nombre: nameInput.value,
+        apellido: surnameInput.value,
+        edad: ageInput.value,
+        ci: ciInput.value,
+        curso: courseInput.value,
+        dia: dayInput.value,
+        hora: timeInput.value
+    }
 
-        studentDB.push(
-            {
-                nombre: nameInput.value,
-                apellido: surnameInput.value,
-                edad: ageInput.value,
-                ci: ciInput.value,
-                curso: courseInput.value,
-                dia: dayInput.value,
-                hora: timeInput.value
-            }
-        )
+    if (errorCatcher(newStudent) == false) {
+        studentDB.push(newStudent)
         displayStudent(infoBox);
         showMessage();
         form.reset();
-
     }
-
+    else{
+        throw new Error('faltan datulis')
+    }
 })
 
 //frontend (NO TOCAR, ESTA BIEN)
