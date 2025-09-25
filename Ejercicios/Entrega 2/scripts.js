@@ -11,6 +11,7 @@ let ciInput = document.querySelector('#ci');
 let courseInput = document.querySelector('.curso')
 let dayInput = document.querySelector('.dia');
 let timeInput = document.querySelector('.hora');
+let message = document.querySelector('.hidden-message')
 
 //DIV principal oculto donde viven los datos de los estudiantes
 infoBox = document.createElement('div');
@@ -18,12 +19,15 @@ infoBox.classList.add('hidden-box');
 pageWrapper.appendChild(infoBox);
 
 
-function verifyInfo(info) {
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+})
+
+function errorCatcher(db) {
     let err = false;
-    info.forEach(item => {
-        let values = Object.values(item);
-        values.some(el => {
-            if (el == '') {
+    db.forEach(el => {
+        Object.values(el).some(item => {
+            if (item == '') {
                 err = true;
             }
         })
@@ -31,28 +35,30 @@ function verifyInfo(info) {
     return err;
 }
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-})
-
-//backend -guardo los datos en la base de datos solamente 
+//backend -guardo los datos en la base de datos solamente. (NO TOCAR, LOS DATOS SE AGREGAN CORRECTAMENTE)
 let studentDB = []
 
 registerButton.addEventListener('click', () => {
 
-    studentDB.push(
-        {
-            nombre: nameInput.value,
-            apellido: surnameInput.value,
-            edad: ageInput.value,
-            ci: ciInput.value,
-            curso: courseInput.value,
-            dia: dayInput.value,
-            hora: timeInput.value
-        }
-    )
-    displayStudent(infoBox)
-    form.reset();
+    if (errorCatcher(studentDB) == false) {
+
+        studentDB.push(
+            {
+                nombre: nameInput.value,
+                apellido: surnameInput.value,
+                edad: ageInput.value,
+                ci: ciInput.value,
+                curso: courseInput.value,
+                dia: dayInput.value,
+                hora: timeInput.value
+            }
+        )
+        displayStudent(infoBox);
+        showMessage();
+        form.reset();
+
+    }
+
 })
 
 //frontend (NO TOCAR, ESTA BIEN)
@@ -75,14 +81,22 @@ function displayStudent(parentName) {
 }
 
 
+function showMessage() {
+    message.innerHTML = 'estudiante agregado correctamente!';
+    message.style.opacity = 1;
+    setTimeout(() => {
+        message.style.opacity = 0;
+    }, 3000)
+}
 
 
+//Boton que permite mostrar u ocultar información de los estudiantes. (NO TOCAR, ESTA FUNCIONANDO)
 infoBtn.addEventListener('click', () => {
-    if(infoBox.style.display == ''){
+    if (infoBox.style.display == '') {
         infoBox.style.display = 'flex'
         infoBtn.innerHTML = 'cerrar informacion';
     }
-    else if(infoBox.style.display == 'flex'){
+    else if (infoBox.style.display == 'flex') {
         infoBtn.innerHTML = 'ver informacion';
         infoBox.style.display = ''
     }

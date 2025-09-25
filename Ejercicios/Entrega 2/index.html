@@ -21,19 +21,19 @@
             <fieldset>
                 <div>
                     <label for="nombre">Nombre</label>
-                    <input id="nombre" type="text">
+                    <input id="nombre" type="text" required>
                 </div>
                 <div>
                     <label for="apellido">Apellido</label>
-                    <input id="apellido" type="text">
+                    <input id="apellido" type="text" required>
                 </div>
                 <div>
                     <label for="edad">Edad</label>
-                    <input id="edad" type="number">
+                    <input id="edad" type="number" required>
                 </div>
                 <div>
                     <label for="ci">CI:</label>
-                    <input id="ci" type="text">
+                    <input id="ci" type="text" required>
                 </div>
             </fieldset>
 
@@ -41,7 +41,7 @@
                 <div>
                     <label for="">Elegir curso</label>
                     <select name="" class="curso">
-                        <option value="Todas">Todas</option>
+                        <option value="Todas">Todos</option>
                         <option value="Programación">Programación</option>
                         <option value="Soporte">Soporte IT</option>
                         <option value="Bases de datos">Bases de datos</option>
@@ -71,6 +71,7 @@
 
             <input class="register-btn btn" type="submit" value="Enviar">
             <button class="info-btn btn">ver informacion</button>
+            <span class="hidden-message"></span>
         </form>
         <!-- 
         <section class="hidden-box">
