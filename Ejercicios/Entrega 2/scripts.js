@@ -13,6 +13,8 @@ let dayInput = document.querySelector('.dia');
 let timeInput = document.querySelector('.hora');
 let message = document.querySelector('.hidden-message');
 
+//La idea de crear varios elementos html es meramente la de practicar.. Siempre es mejor delegar cada acción al lenguaje correspondiente.
+
 //Elementos HTML 
 infoBox = document.createElement('div');
 infoBox.classList.add('hidden-box');
@@ -23,7 +25,7 @@ searchContainer.style.display = 'flex'
 searchContainer.style.width = '100%';
 searchContainer.style.padding = '.2rem';
 searchContainer.style.border = '1px solid black';
-
+searchContainer.style.alignItems = 'center';
 
 let searchInput = document.createElement('input');
  
@@ -55,12 +57,13 @@ searchTerm.appendChild(optionDefault);
 searchTerm.appendChild(option1);
 searchTerm.appendChild(option2);
 searchTerm.appendChild(option3);
-searchTerm.style.border = 'none';
-searchTerm.style.backgroundColor = 'rgba(255,255,255,.6)';
+searchTerm.style.backgroundCOlor = 'transparent';
 
-let searchButton = document.createElement('button');
-searchButton.innerHTML = 'buscar';
-searchButton.style.backgroundColor = "rgb(7, 7, 90)"
+let searchButton = document.createElement('img');
+searchButton.setAttribute('src', 'images/icon.png');
+searchButton.style.width = '1.5rem';
+searchButton.style.height = '1.5rem'
+searchButton.style.cursor= "pointer";
 
 searchInput.setAttribute('placeholder', 'buscar estudiante');
 searchContainer.appendChild(searchInput);
@@ -86,6 +89,12 @@ function errorCatcher(student) {
 //backend -guardo los datos en la base de datos solamente. (NO TOCAR, LOS DATOS SE AGREGAN CORRECTAMENTE)
 let studentDB = []
 
+let savedStudents = JSON.parse(localStorage.getItem('studentDB')) || [];
+studentDB = savedStudents;
+if (studentDB.length > 0) {
+    displayStudent(infoBox);
+}
+
 registerButton.addEventListener('click', () => {
 
     //objeto estudiante
@@ -101,6 +110,7 @@ registerButton.addEventListener('click', () => {
 
     if (errorCatcher(newStudent) == false) {
         studentDB.push(newStudent)
+        localStorage.setItem('studentDB', JSON.stringify(studentDB));
         displayStudent(infoBox);
         showMessage('estudiante ingresado correctamente', 'green');
         form.reset();

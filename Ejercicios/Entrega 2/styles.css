@@ -10,6 +10,9 @@
     padding: 0;
 }
 
+select, option {
+    background-color: transparent;
+}
 
 h1,h2,h3,p,a,li{
     font-family:sans-serif;
