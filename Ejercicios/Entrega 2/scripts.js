@@ -12,71 +12,72 @@ let courseInput = document.querySelector('.curso')
 let dayInput = document.querySelector('.dia');
 let timeInput = document.querySelector('.hora');
 
+function verifyInfo(info) {
+    let err = false;
+    info.forEach(item => {
+        let values = Object.values(item);
+        values.some(el => {
+            if (el == '') {
+                err = true;
+            }
+        })
+    })
+    return err;
+}
 
-form.addEventListener('submit', (event) =>{
+form.addEventListener('submit', (event) => {
     event.preventDefault();
 })
 
+//backend -guardo los datos en la base de datos solamente 
 let studentDB = []
 
-registerButton.addEventListener('click',()=>{
+registerButton.addEventListener('click', () => {
 
-   studentDB.push(
-    {
-        nombre: nameInput.value,
-        apellido: surnameInput.value,
-        edad: ageInput.value,
-        ci: ciInput.value,
-        curso: courseInput.value,
-        dia: dayInput.value,
-        hora: timeInput.value
-    }
-   )
+    studentDB.push(
+        {
+            nombre: nameInput.value,
+            apellido: surnameInput.value,
+            edad: ageInput.value,
+            ci: ciInput.value,
+            curso: courseInput.value,
+            dia: dayInput.value,
+            hora: timeInput.value
+        }
+    )
 
+    
 })
 
-
-// let infoContainer = document.createElement('div');
-    // infoContainer.classList.add('hidden-box');
-    // pageWrapper.appendChild(infoContainer);
-    // infoContainer.appendChild(data)
-    // let closeBtn = document.createElement('button')
-    // closeBtn.classList.add('close-btn');
-    // closeBtn.innerHTML = 'cerrar';
-    // infoContainer.appendChild(closeBtn);
-
-
-function displayStudent(parentName){
+//frontend
+function displayStudent(parentName) {
     let studentBox = document.createElement('div');
-    
     studentBox.classList.add('hidden-info');
-    
-    studentDB.forEach(el =>{
-        studentBox.innerHTML = 
-        `
-        <p>nombre: ${el.nombre}</p>
-        <p>apellido: ${el.apellido}</p>
-        <p>edad: ${el.edad}</p>
-        <p>ci: ${el.ci}</p>
-        <p>curso: ${el.curso}</p>
-        <p>dia: ${el.dia}</p>
-        <p>hora: ${el.hora}</p>
-        `
+    studentDB.forEach(el => {
+        studentBox.innerHTML =
+            `
+            <p>nombre: ${el.nombre}</p>
+            <p>apellido: ${el.apellido}</p>
+            <p>edad: ${el.edad}</p>
+            <p>ci: ${el.ci}</p>
+            <p>curso: ${el.curso}</p>
+            <p>dia: ${el.dia}</p>
+            <p>hora: ${el.hora}</p>
+            `
     })
-
     parentName.appendChild(studentBox);
 }
 
 
 
 
-infoBtn.addEventListener('click', ()=>{
-    if(!infoBox){
+infoBtn.addEventListener('click', () => {
+    if (!infoBox) {
         infoBox = document.createElement('div');
         infoBox.classList.add('hidden-box');
         pageWrapper.appendChild(infoBox);
     }
-    else{
+    else {
         infoBox.classList.add('hidden-box');
         pageWrapper.appendChild(infoBox);
     }
