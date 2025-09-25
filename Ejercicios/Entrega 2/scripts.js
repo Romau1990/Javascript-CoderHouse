@@ -12,6 +12,12 @@ let courseInput = document.querySelector('.curso')
 let dayInput = document.querySelector('.dia');
 let timeInput = document.querySelector('.hora');
 
+//DIV principal oculto donde viven los datos de los estudiantes
+infoBox = document.createElement('div');
+infoBox.classList.add('hidden-box');
+pageWrapper.appendChild(infoBox);
+
+
 function verifyInfo(info) {
     let err = false;
     info.forEach(item => {
@@ -46,7 +52,7 @@ registerButton.addEventListener('click', () => {
         }
     )
     displayStudent(infoBox)
-    
+    form.reset();
 })
 
 //frontend (NO TOCAR, ESTA BIEN)
@@ -72,17 +78,14 @@ function displayStudent(parentName) {
 
 
 infoBtn.addEventListener('click', () => {
-    if (!infoBox) {
-        infoBox = document.createElement('div');
-        infoBox.classList.add('hidden-box');
-        pageWrapper.appendChild(infoBox);
+    if(infoBox.style.display == ''){
+        infoBox.style.display = 'flex'
+        infoBtn.innerHTML = 'cerrar informacion';
     }
-    else {
-        infoBox.classList.add('hidden-box');
-        pageWrapper.appendChild(infoBox);
+    else if(infoBox.style.display == 'flex'){
+        infoBtn.innerHTML = 'ver informacion';
+        infoBox.style.display = ''
     }
-
-    
 })
 
 console.log(studentDB)
