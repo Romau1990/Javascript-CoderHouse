@@ -45,11 +45,11 @@ registerButton.addEventListener('click', () => {
             hora: timeInput.value
         }
     )
-
+    displayStudent(infoBox)
     
 })
 
-//frontend
+//frontend (NO TOCAR, ESTA BIEN)
 function displayStudent(parentName) {
     let studentBox = document.createElement('div');
     studentBox.classList.add('hidden-info');
@@ -82,7 +82,7 @@ infoBtn.addEventListener('click', () => {
         pageWrapper.appendChild(infoBox);
     }
 
-    displayStudent(infoBox)
+    
 })
 
 console.log(studentDB)

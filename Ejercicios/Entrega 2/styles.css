@@ -113,12 +113,13 @@ input, select{
     width: 25rem;
     height: auto;
     border-radius: 1rem;
-    display: flex;
+    display: none;
     flex-flow: column nowrap;
     align-items: center;
     row-gap:2rem;
     overflow:auto;
     padding: 1rem;
+
 }
 
 .hidden-info{
