@@ -12,18 +12,18 @@ let courseInput = document.querySelector('.curso')
 let dayInput = document.querySelector('.dia');
 let timeInput = document.querySelector('.hora');
 let message = document.querySelector('.hidden-message');
-//La idea de crear varios elementos html es meramente la de practicar.. Siempre es mejor delegar cada acción al lenguaje correspondiente.
 
 //Elementos HTML 
 infoBox = document.createElement('div');
 infoBox.classList.add('hidden-box');
 pageWrapper.appendChild(infoBox);
 
-
+//preventDefault()
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 })
 
+//verificar si existe algun campo inconpleto en el formulario.
 function errorCatcher(student) {
     let isError = Object.values(student).some(value => value == '');
     return isError;
@@ -65,7 +65,7 @@ registerButton.addEventListener('click', () => {
     }
 })
 
-//frontend (NO TOCAR, ESTA BIEN)
+//frontend
 function displayStudent(parentName) {
 
     studentDB.forEach(el => {
@@ -85,7 +85,7 @@ function displayStudent(parentName) {
     })
 }
 
-
+//permite mostrar un mensaje dinámico a la hora de registrar un estudiante. 
 function showMessage(msg, color) {
     message.innerHTML = msg;
     message.style.color = color;
@@ -96,7 +96,7 @@ function showMessage(msg, color) {
 }
 
 
-//Boton que permite mostrar u ocultar información de los estudiantes. (NO TOCAR, ESTA FUNCIONANDO)
+//Boton que permite mostrar u ocultar información de los estudiantes.
 infoBtn.addEventListener('click', () => {
     if (infoBox.style.display == '') {
         infoBox.style.display = 'flex'
